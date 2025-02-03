@@ -1,4 +1,36 @@
 // Site scripts
+
+// Resuable asynchronous function that fetches JSON data from the specified URL.
+async function fetchData(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        // console.log(data);
+        return await data;
+    } catch (error) {
+        console.error('Error in fetchData:', error);
+        throw error; // Rethrow so consumer can handle
+    }
+}
+
+
+// Fetch a random quote data from the API
+async function quoteOfTheDay(url) {
+    try {
+        // await the quote of the day
+        const data = await fetchData(url);
+        const quoteObj = data[0];
+        // console.log(quoteObj);
+        // Insert the quote text and author into the page
+        document.querySelector('.quote-text').innerHTML = quoteObj.h;
+    } catch (error) {
+        console.error('Error in fetching quoteOfTheDay:', error);
+    }
+}
+
 // Initialize Dialogs on the page
 function dialogInitializer(event, options = {}) {
     // Default function parameters

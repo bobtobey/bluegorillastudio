@@ -123,8 +123,24 @@
                         </div>
                     </article>
                 </section> 
+                
+                <!-- SECTION QUOTE DETAILS -->
+                <section>
+                    <article class="article-100 article-nobgbdr quote-wrapper">
+                
+                        <h2>Random Quote</h2>
+                        <div class="quote-text">
+                            <blockquote>
+                                “The only way to do great work is to love what you do.” —
+                                <footer class="quote-author">
+                                    Steve Jobs
+                                </footer>
+                            </blockquote>
+                        </div>
+                    
+                    </article>
+                </section>
 
-                <!-- ASIDE DETAILS -->
             </div>
 
             <!-- FOOTER -->
@@ -143,7 +159,11 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
     
-    <script>        
+    <script>
+        // Zen Quotes API URL
+        const api_url = 'https://zenquotes.io/api/random/';
+        quoteOfTheDay(api_url);
+
         // STATIC TEMPLATE CODE
         (function() {})();
         document.addEventListener('DOMContentLoaded', function() {

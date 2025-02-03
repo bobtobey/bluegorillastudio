@@ -206,6 +206,27 @@ section {
         &.article-100 {
             grid-column: 1 / span 2;            
         }
+        &.quote-wrapper {
+            h2 {
+                margin-bottom: 2rem;
+            }
+            .quote-text {
+                padding-left: 2rem;
+                font-family: var(--base-font-family-serif);
+                
+                blockquote {
+                    font-size: 3rem;
+                }
+
+                footer {
+                    padding-left: 1.5rem;
+                    background: none;
+                    border: 0;
+                    font-family: var(--base-font-family-sans-serif);
+                    font-size: 2rem;
+                }
+            }
+        }
 
         &.article-portfolio {
             display: grid;
