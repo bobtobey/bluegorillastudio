@@ -1,0 +1,336 @@
+:root {
+    /* set the root font-size to 62.5%, which translates to approximately 10px. */
+    /* This makea the mental conversion of the font size easier */
+    /* when using em or rem (e.g. 1 rem = approx. 10 pixels, while 1.8 rem = approx. 18 pixels) */
+    --base-font-size: 62.5%;
+    --default-font-size: 10px;
+    --default-text-size: 1.6rem;
+    --default-header1-size: 3.5rem;
+    --default-header2-size: 3.0rem;
+    --default-header3-size: 2.5rem;
+    --base-font-family-serif: 'Times New Roman', Times, serif;
+    --base-font-family-sans-serif: Verdana, Geneva, Tahoma, sans-serif;    
+    --primary-text-color: #000;
+    --secondary-text-color: blue;
+    --alert-color: red;
+    --update-color: green;
+    --information-color: blue;
+    --default-gutter: 5px;
+    --prime-color-red: #a30606;
+    --prime-color-orange: #dd7d24;
+    --prime-color-yellow: #e0be25;
+    --prime-color-green: #1dc018;
+    --prime-color-blue: #2fb8c2;
+    --prime-color-indigo: #5c61aa;
+    --prime-color-violet: #eb18cf;
+    --prime-color-pink: #a30606;
+    --prime-color-grey: #707070;
+    --prime-color-white: #dfdfdf;
+
+} 
+/* meyerweb reset START */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video , dl, dt, dd  {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /* font: inherit; */
+    vertical-align: baseline;
+}
+* {
+    box-sizing: border-box; /* include the padding and border in an element's total width and height */
+}
+ol, ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}    
+/* meyerweb reset END */   
+/* BASE Styles */
+html {
+    /* The rem unit is relative to the root element's font size (html element) */
+    font-size: var(--default-font-size, 10px);
+}  
+body {
+    font-size: var(--default-text-size, 16px);
+    font-family: var(--base-font-family-sans-serif);
+    line-height: 1; /* meyerweb reset */
+    background: var(--clr-primary-50);
+    background: var(--neutralbg-50);
+} 
+.maincontainer {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: var(--neutral-50);
+}
+h1 {
+    font-size: 3.5rem;
+    margin: 0 auto;
+}
+h2 {
+    font-size: 2.5rem;
+    margin: 0 auto;
+}
+h3 {
+    font-size: 1.9rem;
+    margin: 0 auto;
+} 
+h4 {
+    font-size: 1.7rem;
+    margin: 0 auto;
+}   
+h5 {
+    font-size: 1.6rem;
+    margin: 0 auto;
+}        
+p {
+    color: var(--primary-text-color, black);
+    font-size: var(--default-text-size);
+    margin: 0.5rem 0 1rem 0;
+}  
+a {
+    font-size: var(--default-text-size);
+}      
+.alert {
+    color: var(--alert-color, red);
+}       
+.update {
+    color: var(--update-color, green);
+}
+.infomation {
+    color: var(--information-color, blue);
+}   
+.is-nodisplay {
+    display: none;
+}
+.is-border-grey {    
+    border: 1px solid var(--neutral-400);
+}
+
+/* Grid Styles START */
+.gridwrapper {
+    /* background: var(--prime-color-red); */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "maincontentwrapper"
+        "footer";
+    row-gap: 0px;
+    flex: 1;
+}
+.gridwrapper header {
+    grid-area: header;
+    /* background: var(--prime-color-grey); */
+}
+.gridwrapper nav {
+    grid-area: nav;
+    /* background: var(--prime-color-grey); */
+}
+.gridwrapper .maincontentwrapper {
+    width: 100%;
+    grid-area: maincontentwrapper;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background: var(--prime-color-blue); */
+}
+.gridwrapper footer {
+    grid-area: footer;
+    /* background: var(--prime-color-grey); */
+}
+/* Grid Styles END */
+
+/* BASE form field styles */
+form {
+    input {
+        font-size: 1.4rem;
+        font-family: var(--base-font-family-sans-serif);
+    }
+    label.required {
+        &::after {
+            content: " *";
+            color: var(--alert-color);
+        }
+    }
+}
+.form-field-width-100x {
+    width: 100px;
+}
+.form-field-width-150x {
+    width: 150px;
+}
+.form-field-width-200x {
+    width: 200px;
+}
+.form-field-width-250x {
+    width: 250px;
+}
+.form-field-width-300x {
+    width: 300px;
+}
+.form-field-width-350x {
+    width: 350px;
+}
+/* Base Button Styles */
+button {
+    margin-bottom: 4px;
+    margin-right: 4px;
+}
+button {
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color: var(--neutral-700);
+    font-size: var(--default-text-size);
+    z-index: 1001;
+    border: 1px solid var(--neutral-700);
+    border-radius: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--neutral-50);
+        color: var(--neutral-500);
+    }
+}
+.btn-link {
+    color: var(--primary-color-white);
+    border: 1px solid;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.btn-primary {
+    border-color: var(--button-border-primary);
+    background: var(--button-background-primary);
+    color: var(--button-text-primary);
+
+    &:hover {       
+        background: var(--button-background-primary-hover);
+        color: var(--button-text-primary-hover);
+    }
+    &:active {
+        background: var(--button-background-primary-active);
+        color: var(--button-text-primary-active);
+    }
+}
+.btn-secondary {
+    border-color: var(--button-border-secondary);
+    background: var(--button-background-secondary);
+    color: var(--button-text-secondary);
+
+    &:hover {       
+        background: var(--button-background-secondary-hover);
+        color: var(--button-text-secondary-hover);
+    }
+    &:active {
+        background: var(--button-background-secondary-active);
+        color: var(--button-text-secondary-active);
+    }
+}
+.btn-complementary {
+    border-color: var(--button-border-complementary);
+    background: var(--button-background-complementary);
+    color: var(--button-text-complementary);
+
+    &:hover {       
+        background: var(--button-background-complementary-hover);
+        color: var(--button-text-complementary-hover);
+    }
+    &:active {
+        background: var(--button-background-complementary-active);
+        color: var(--button-text-complementary-active);
+    }
+}
+
+header {
+    padding: 1rem;
+}
+/* Base Nav Styles */
+nav {
+    width: 100%; /* Ensures the nav fills the width of its container */
+}
+nav ul {
+    list-style: none; /* Removes default list styling */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Aligns the list items horizontally */
+    height: 50px; /* Sets the height of the navbar */
+}
+
+nav li {
+    flex: 1; /* Distributes space evenly among list items */
+    border-right: 1px solid #ccc; /* Creates a line separator between items */
+    display: flex;
+    justify-content: center; /* Center the link horizontally */
+    align-items: center; /* Center the link vertically */
+}
+
+nav li:last-child {
+    border-right: none; /* Removes the border for the last item */
+}
+
+nav a {
+    text-decoration: none; /* Removes the underline from links */
+    color: #333; /* Sets the link color */
+    /* padding: 10px 20px; Adds some padding around the links */
+    display: block; /* Ensures the padding and clickable area is respected */
+    background-color: #ddd; /* Example background color for the links/buttons */
+    transition: background-color 0.3s; /* Adds a transition effect on hover */
+}
+
+nav a:hover {
+    background-color: #ccc; /* Changes background color on hover */
+}
+
+/* Base Semantic Tag Styles */
+section {
+    padding: 2rem;
+}
+
+article {
+    /* display: none; */
+    padding: 2rem;
+    /* background: rgb(173, 240, 146); */
+          
+    p {
+        width: calc(100% - 50px);
+    }  
+}
+
+aside {
+    padding: 2rem;
+}
+.subgrid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(20px, 1fr)); */
+    gap: 5px;
+    /* color: var(--prime-color-white, #fff); */
+}
+.subgrid-wrapper > .gridItem {
+    border: 1px solid #000;
+    /* background-color: rgb(40, 134, 134); */
+    padding: 0.5rem;
+    width: 16rem;
+}
+
+/* FOOTER Styles */
+footer {
+    height: 42px;
+
+    p {
+        margin: 0 0 0 0;
+    }
+}

@@ -1,0 +1,118 @@
+:root {
+    /* set the root font-size to 62.5%, which translates to approximately 10px. */
+    /* This makea the mental conversion of the font size easier */
+    /* when using em or rem (e.g. 1 rem = approx. 10 pixels, while 1.8 rem = approx. 18 pixels) */
+
+    /* Base Variables */
+    --primary100: #ffffff;
+    --primary70: #FF8980;
+    --primary60: #FF544F;
+    --primary50: #DD3837;
+    --primary40: #B91B21;
+    --primary35: #A70817;
+    --primary30: #930011;
+    --primary0: #000000;
+    --secondary80: #FBB5AE;
+    --secondary70: #DD9A94;
+    --secondary60: #BF807B;
+    --secondary50: #A26862;
+    --secondary40: #86504B;
+    --tertiary90: #FFDEA4;
+    --tertiary70: #D2A445;
+    --tertiary60: #B58A2D;
+    --tertiary35: #6C4D00;
+    --tertiary20: #412D00;
+    /* MUI Neutral colors */
+    --neutral-50: #FAFAFA;
+    --neutral-100: #F5F5F5;
+    --neutral-200: #EEEEEE;
+    --neutral-300: #E0E0E0;
+    --neutral-400: #BDBDBD;
+    --neutral-500: #9E9E9E;
+    --neutral-600: #757575;
+    --neutral-700: #616161;
+    --neutral-800: #424242;
+    --neutral-900: #212121;
+    --neutralbg-50: #ECEFF1;
+    --neutralbg-500: #607D8B;
+    --neutralbg-900: #263238;
+    --extcolor-green: #8ABD00;
+    /* CLR Primary colors */
+    --clr-primary-25: #f2f9ff;
+    --clr-primary-50: #e3f2ff;
+	--clr-primary-100: #badefe;
+	--clr-primary-200: #8ecaff;
+	--clr-primary-300: #5eb5fe;
+	--clr-primary-400: #37a5ff;
+	--clr-primary-500: #0395fe;
+	--clr-primary: var(--clr-primary-500);
+	--clr-primary-600: #0a87f0;
+	--clr-primary-700: #0c75dc;
+	--clr-primary-800: #0d64ca;
+	--clr-primary-900: #0b45ab;
+    /* CLR Complementarys */    
+	--clr-complementary-50: #fff8e1;
+	--clr-complementary-100: #ffebb2;
+	--clr-complementary-200: #ffde81;
+	--clr-complementary-300: #ffd24d;
+	--clr-complementary-400: #ffc726;
+	--clr-complementary-500: #ffbe03;
+	--clr-complementary-600: #ffb000;
+	--clr-complementary-700: #ff9d00;
+	--clr-complementary-800: #fe8c01;
+	--clr-complementary-900: #fe6b03; /* HSB 25 99 99 */ 
+	--clr-complementary: var(--clr-complementary-900);
+	--clr-complementary-dark-100: #e56102; /* HSB 25 99 90 */
+	--clr-complementary-dark-300: #cc5602; /* HSB 25 99 80 */
+	--clr-complementary-dark-400: #b34b02; /* HSB 25 99 70 */
+	--clr-complementary-dark-500: #994102; /* HSB 25 99 60 */
+	--clr-complementary-dark-700: #662b01; /* HSB 25 99 40 */
+	--clr-complementary-dark-900: #331601; /* HSB 25 99 20 */
+    /* Supporting Colors */
+    --clr-success-500: #1bfe03;
+    --clr-error-500: #fe0303;
+    --clr-warning-500: #feba03;
+    --clr-information-500: #2c03fe;
+    /* STATIC */
+    --clr-tertiary: #5e5221;
+    --primary-color-white: var(--primary100);
+    --primary-color-black: var(--primary0);
+    --primary-color-grey: var(--neutral-500);
+    /* Text Variables */
+    --text-logo-fontfamily: var(--base-font-family-sans-serif);
+    --text-logo-fontstyle: italic;
+    /* Button Variables Primary */
+    --button-border-primary: var(--clr-primary);
+    --button-background-primary: var(--clr-primary-500);
+    --button-background-primary-hover: var(--primary-color-white);
+    --button-background-primary-active: var(--clr-primary-700);
+    --button-text-primary: var(--primary-color-white);
+    --button-text-primary-hover: var(--clr-primary-500);
+    --button-text-primary-active: var(--clr-primary-100);
+    /* Button Variables secondary */
+    --button-border-secondary: var(--clr-primary);
+    --button-background-secondary: var(--primary-color-white);
+    --button-background-secondary-hover: var(--clr-primary-500);
+    --button-background-secondary-active: var(--clr-primary-700);
+    --button-text-secondary: var(--clr-primary-500);
+    --button-text-secondary-hover: var(--primary-color-white);
+    --button-text-secondary-active: var(--clr-primary-100);
+    /* Button Variables complementary */
+    --button-border-complementary: var(--clr-complementary-dark-300);
+    --button-background-complementary: var(--primary-color-white);
+    --button-background-complementary-hover: var(--clr-complementary);
+    --button-background-complementary-active: var(--clr-complementary-700);
+    --button-text-complementary: var(--clr-complementary-dark-100);
+    --button-text-complementary-hover: var(--primary-color-white);
+    --button-text-complementary-active: var(--primary-color-white);
+
+    /* Dialog Variables */
+    --dialog-header-background-color: var(--tertiary90);
+    --dialog-background-color: var(--primary-color-white);
+    --dialog-border-color: var(--tertiary20);
+    --dialog-border-width: 2px;
+    /* Sidebar Variables */
+    --sidebar-background-color: var(--tertiary90);
+    --sidebar-border-color: var(--tertiary20);
+    --sidebar-border-width: 2px;
+}
