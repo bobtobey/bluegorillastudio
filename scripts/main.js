@@ -1,5 +1,15 @@
 // Site scripts
 
+// Reusable functions
+// Y combinator for recursion
+function Y(f) {
+    return (function (x) {
+        return f(function (v) { return x(x)(v); });
+    })(function (x) {
+        return f(function (v) { return x(x)(v); });
+    });
+}
+
 // Resuable asynchronous function that fetches JSON data from the specified URL.
 async function fetchData(url) {
     try {
