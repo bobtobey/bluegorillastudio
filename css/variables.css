@@ -2,6 +2,28 @@
     /* set the root font-size to 62.5%, which translates to approximately 10px. */
     /* This makea the mental conversion of the font size easier */
     /* when using em or rem (e.g. 1 rem = approx. 10 pixels, while 1.8 rem = approx. 18 pixels) */
+    --base-font-size: 62.5%;
+    --default-font-size: 10px;
+    --default-text-size: 1.6rem;
+    --default-header1-size: 3.5rem;
+    --default-header2-size: 3.0rem;
+    --default-header3-size: 2.5rem;
+    --base-text-size: 1.2rem;
+    --base-text-line-height: 1.5;
+    --base-font-family-serif: Georgia, 'Times New Roman', Times, serif;
+    --base-font-family-sans-serif: Verdana, Helvetica, Arial, Tahoma, sans-serif;
+    --base-font-family-modern-sans-serif: Roboto, Verdana, Arial, Tahoma, sans-serif;
+    --base-font-family-geometric-sans-serif: Montserrat, Verdana, Arial, Tahoma, sans-serif;
+    --base-page-spacing: 0;
+    --base-surfaces-spacing: 1.6rem;
+    --base-surfaces-border-width: 2px;
+    --base-surfaces-border-width-side: 2px;
+    --base-surfaces-border-radius-size: 12px;
+    --base-margin-spacing: 2rem; 
+    --base-padding-spacing: 2rem;
+    --base-gap-spacing: 2rem;
+    --base-border-radius-size: 2rem;
+    --base-surfaces-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
 
     /* Base Variables */
     --primary100: #ffffff;
@@ -50,6 +72,8 @@
 	--clr-primary-700: #0c75dc;
 	--clr-primary-800: #0d64ca;
 	--clr-primary-900: #0b45ab;
+    --clr-primary-dark-100: #13cbc7;
+    --clr-primary-dark-500: #0a3a8f;
     /* CLR Complementarys */    
 	--clr-complementary-50: #fff8e1;
 	--clr-complementary-100: #ffebb2;
@@ -81,6 +105,11 @@
     /* Text Variables */
     --text-logo-fontfamily: var(--base-font-family-sans-serif);
     --text-logo-fontstyle: italic;
+    --text-margin-bottom: 1.2rem;
+    --text-padding-left: 2rem;
+    --text-padding-right: 2rem;
+    --text-padding-top: 2rem;
+    --text-padding-bottom: 2rem;
     /* Button Variables Primary */
     --button-border-primary: var(--clr-primary);
     --button-background-primary: var(--clr-primary-500);

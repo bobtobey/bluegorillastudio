@@ -1,15 +1,4 @@
-:root {
-    /* set the root font-size to 62.5%, which translates to approximately 10px. */
-    /* This makea the mental conversion of the font size easier */
-    /* when using em or rem (e.g. 1 rem = approx. 10 pixels, while 1.8 rem = approx. 18 pixels) */
-    --base-font-size: 62.5%;
-    --default-font-size: 10px;
-    --default-text-size: 1.6rem;
-    --default-header1-size: 3.5rem;
-    --default-header2-size: 3.0rem;
-    --default-header3-size: 2.5rem;
-    --base-font-family-serif: 'Times New Roman', Times, serif;
-    --base-font-family-sans-serif: Verdana, Geneva, Tahoma, sans-serif;    
+:root {   
     --primary-text-color: #000;
     --secondary-text-color: blue;
     --alert-color: red;
@@ -112,6 +101,11 @@ a {
 .is-border-grey {    
     border: 1px solid var(--neutral-400);
 }
+.notes-disclaimer {
+    font-size: 1.4rem;
+    color: var(--neutral-600);
+    font-style: italic;
+}
 
 /* Grid Styles START */
 .gridwrapper {
@@ -161,24 +155,6 @@ form {
             color: var(--alert-color);
         }
     }
-}
-.form-field-width-100x {
-    width: 100px;
-}
-.form-field-width-150x {
-    width: 150px;
-}
-.form-field-width-200x {
-    width: 200px;
-}
-.form-field-width-250x {
-    width: 250px;
-}
-.form-field-width-300x {
-    width: 300px;
-}
-.form-field-width-350x {
-    width: 350px;
 }
 /* Base Button Styles */
 button {
@@ -257,24 +233,24 @@ button {
 header {
     padding: 1rem;
 }
-/* Base Nav Styles */
+/* ------ Base Nav Styles */
 nav {
-    width: 100%; /* Ensures the nav fills the width of its container */
+    width: 100%; 
 }
-nav ul {
+nav ul.nav-menu {
     list-style: none; /* Removes default list styling */
     margin: 0;
     padding: 0;
-    display: flex; /* Aligns the list items horizontally */
-    height: 50px; /* Sets the height of the navbar */
+    height: auto;
+    display: flex; 
+    gap: 5px;
 }
 
 nav li {
+    width: 100%; /* Ensures each item fills the navbar */
+    position: relative;
     flex: 1; /* Distributes space evenly among list items */
     border-right: 1px solid #ccc; /* Creates a line separator between items */
-    display: flex;
-    justify-content: center; /* Center the link horizontally */
-    align-items: center; /* Center the link vertically */
 }
 
 nav li:last-child {
@@ -282,16 +258,27 @@ nav li:last-child {
 }
 
 nav a {
-    text-decoration: none; /* Removes the underline from links */
-    color: #333; /* Sets the link color */
-    /* padding: 10px 20px; Adds some padding around the links */
     display: block; /* Ensures the padding and clickable area is respected */
-    background-color: #ddd; /* Example background color for the links/buttons */
-    transition: background-color 0.3s; /* Adds a transition effect on hover */
+    text-decoration: none; 
+    width: 100%; 
+    color: #333; 
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--base-border-radius-size);
+    padding: 1rem 2.5rem;      
+    transition: background-color 0.3s ease, border 0.3s ease, border-radius 0.3s ease;
+}
+
+nav a.nav-link-active,
+nav a.nav-link-dropdown-active {
+    border-radius: var(--base-border-radius-size);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: default;
 }
 
 nav a:hover {
-    background-color: #ccc; /* Changes background color on hover */
+    background-color: #ccc; 
+    border-radius: var(--base-border-radius-size);
 }
 
 /* Base Semantic Tag Styles */
