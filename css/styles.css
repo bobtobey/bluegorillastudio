@@ -42,6 +42,7 @@ ol, ul, li {
 html {
     /* The rem unit is relative to the root element's font size (html element) */
     font-size: var(--default-font-size, 10px);
+    scrollbar-gutter: stable;
 }  
 body {
     font-size: var(--default-text-size, 16px);
@@ -49,15 +50,33 @@ body {
     line-height: 1; /* meyerweb reset */
     background: var(--clr-primary-50);
     background: var(--neutralbg-50);
-} 
-.maincontainer {
-    width: 100vw;
-    min-height: 100vh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    background: var(--neutral-50);
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+    overflow: auto;
 }
+.outer-container {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+.maincontainer {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    /* display: flex;
+    flex-direction: column; */
+    background: var(--primary-color-white, #ffffff);
+    overflow: auto;
+}
+.gridwrapper {
+    min-height: 100vh;
+    width: 100%;
+}
+
 h1 {
     font-size: 3.5rem;
     margin: 0 auto;
@@ -67,11 +86,11 @@ h2 {
     margin: 0 auto;
 }
 h3 {
-    font-size: 1.9rem;
+    font-size: 2.0rem;
     margin: 0 auto;
 } 
 h4 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     margin: 0 auto;
 }   
 h5 {
@@ -84,8 +103,15 @@ p {
     margin: 0.5rem 0 1rem 0;
 }  
 a {
-    font-size: var(--default-text-size);
-}      
+    font-size: inherit;
+} 
+.link-reset-wrapper {
+    display: block;          /* or inline-block if preferred */
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+}
 .alert {
     color: var(--alert-color, red);
 }       
@@ -134,26 +160,85 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     /* background: var(--prime-color-blue); */
 }
 .gridwrapper footer {
     grid-area: footer;
     /* background: var(--prime-color-grey); */
+}  
+
+.grid-col-span-100 {
+  grid-column: 1 / span 2;
 }
 /* Grid Styles END */
 
 /* BASE form field styles */
 form {
-    input {
+    input,
+    textarea {
         font-size: 1.4rem;
         font-family: var(--base-font-family-sans-serif);
+
+        &::placeholder {
+            color: var(--neutral-500);
+        }
     }
-    label.required {
+    & label.required {
         &::after {
             content: " *";
             color: var(--alert-color);
         }
+    }
+}
+.form-field-width-100pct {
+    width: 100%;
+}
+.form-field-width-100x {
+    width: 100px;
+}
+.form-field-width-150x {
+    width: 150px;
+}
+.form-field-width-200x {
+    width: 200px;
+}
+.form-field-width-250x {
+    width: 250px;
+}
+.form-field-width-300x {
+    width: 300px;
+}
+.form-field-width-350x {
+    width: 350px;
+}
+/* Base Link Styles */
+.link-back-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 var(--base-margin-spacing) 0;
+
+    & a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--neutral-500);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            color: var(--clr-primary-500);
+            transform: translateX(-10px);
+        }
+        &:hover svg {
+            transform: translateX(-3px);
+            transition: transform 0.3s ease;
+        }
+    }
+    & svg {
+        margin-right: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
     }
 }
 /* Base Button Styles */
@@ -186,6 +271,7 @@ button {
     border: 1px solid;
     border-radius: 10px;
     text-decoration: none;
+    transition: background-color 200ms ease, transform 500ms ease; 
 }
 .btn-primary {
     border-color: var(--button-border-primary);
@@ -195,6 +281,7 @@ button {
     &:hover {       
         background: var(--button-background-primary-hover);
         color: var(--button-text-primary-hover);
+        text-decoration: none;
     }
     &:active {
         background: var(--button-background-primary-active);
@@ -209,6 +296,7 @@ button {
     &:hover {       
         background: var(--button-background-secondary-hover);
         color: var(--button-text-secondary-hover);
+        text-decoration: none;
     }
     &:active {
         background: var(--button-background-secondary-active);
@@ -223,10 +311,44 @@ button {
     &:hover {       
         background: var(--button-background-complementary-hover);
         color: var(--button-text-complementary-hover);
+        text-decoration: none;
     }
     &:active {
         background: var(--button-background-complementary-active);
         color: var(--button-text-complementary-active);
+        transform: scale(0.98);
+    }
+}
+.btn-complementary-hollow {
+    border-color: var(--button-border-complementary);
+    background: var(--primary-color-white);
+    color: var(--button-text-complementary);
+
+    &:hover {       
+        background: var(--button-background-complementary-hover);
+        color: var(--primary-color-white);
+        text-decoration: none;
+    }
+    &:active {
+        background: var(--button-background-complementary-active);
+        color: var(---primary-color-white);
+        transform: scale(0.98);
+    }
+}
+.btn-complementary-solid {
+    border-color: var(--button-border-complementary);
+    background: var(--button-background-complementary-solid);
+    color: var(--primary-color-white);
+
+    &:hover {       
+        background: var(--primary-color-white);
+        color: var(--button-text-complementary-hover-solid);
+        text-decoration: none;
+    }
+    &:active {
+        background: var(--button-background-complementary-active-solid);
+        color: var(--button-text-complementary-active-solid);
+        transform: scale(0.98);
     }
 }
 
@@ -243,7 +365,7 @@ nav ul.nav-menu {
     padding: 0;
     height: auto;
     display: flex; 
-    gap: 5px;
+    gap: calc(var(--base-gap-spacing) * 0.5); /* Adds space between items */
 }
 
 nav li {
@@ -259,6 +381,8 @@ nav li:last-child {
 
 nav a {
     display: block; /* Ensures the padding and clickable area is respected */
+    display: flex; /* Aligns items in the center */
+    align-items: center; /* Centers items vertically */
     text-decoration: none; 
     width: 100%; 
     color: #333; 
@@ -267,18 +391,31 @@ nav a {
     border-radius: var(--base-border-radius-size);
     padding: 1rem 2.5rem;      
     transition: background-color 0.3s ease, border 0.3s ease, border-radius 0.3s ease;
+
+    .icon-caret {
+        margin-left: 0.9rem;
+        width: 2.2rem;
+        height: 2.2rem;
+        stroke-width: 2;
+        display: inline-block;
+        stroke: currentColor;
+        transition: transform 0.3s ease;
+        transform-origin: center center;
+    }
+}
+nav a:hover .icon-caret {
+    transform: rotate(180deg); /* point up */
 }
 
 nav a.nav-link-active,
 nav a.nav-link-dropdown-active {
-    border-radius: var(--base-border-radius-size);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     cursor: default;
 }
 
 nav a:hover {
     background-color: #ccc; 
-    border-radius: var(--base-border-radius-size);
+    text-decoration: none;
 }
 
 /* Base Semantic Tag Styles */
@@ -295,7 +432,15 @@ article {
         width: calc(100% - 50px);
     }  
 }
+.article-readable p {
+    font-family: var(--base-font-family-serif);
+    font-size: calc(var(--default-text-size) + 0.15rem);
+    /* font-size: calc(var(--default-text-size) * 1.0625); */
 
+    &.notes-disclaimer {
+        font-family: var(--base-font-family-sans-serif);
+    }
+}
 aside {
     padding: 2rem;
 }
@@ -319,5 +464,85 @@ footer {
 
     p {
         margin: 0 0 0 0;
+    }
+}
+
+/* General Style Effects */
+
+
+/* SECTION Form Styles */
+.fnol-form-group {
+    margin-top: var(--base-margin-spacing);
+    padding: var(--base-padding-spacing);
+    display: flex;
+    justify-content: flex-start;
+
+    form {
+        width: 75%;
+    }
+
+    label {
+        display: block;
+        margin: 0 0 1rem 0;
+        color: var(--primary-color-black);
+    }
+    input[type=date],
+    input[type=email], 
+    input[type=tel], 
+    input[type=text],
+    select, textarea {
+        display: inline-block;
+        border-radius: 4px;
+        border: 2px solid var(--neutral-500);
+        padding: 12px 20px;
+        padding: 1.2rem 1.6rem;
+        margin: 0 0 2rem 0;
+        color: var(--neutral-500);
+
+        &:focus {
+            background-color: var(--neutral-200);
+        }
+        &:hover{
+            border-color: var(--neutral-500);
+            /* color: cyan; */
+        }
+    }
+    textarea {
+        min-height: 100px;
+        height: 150px;
+    }
+    /* FORM Grid Styles */
+    .fnol-form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 2rem;
+        width: 100%;
+    
+        &.form-grid-col2 {
+            grid-template-columns: 1fr 2fr;
+            column-gap: 2rem;
+        }
+        &.form-grid-col3 {
+            grid-template-columns: 1fr 1fr 2fr;
+            column-gap: 2rem;
+        }
+    }
+    /* FORM Button bloc Styles */
+    .fnol-form-btn-bloc {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+
+        & .btn-link {
+            padding: 1rem 2rem;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+
+            &::after {
+                margin-left: 10px;
+            }
+        }
     }
 }

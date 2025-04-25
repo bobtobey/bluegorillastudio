@@ -31,11 +31,12 @@ async function fetchData(url) {
 async function quoteOfTheDay(url) {
     try {
         // await the quote of the day
+        // https://theysaidso.com/api
         const data = await fetchData(url);
-        const quoteObj = data[0];
-        // console.log(quoteObj);
+        const quoteObj = data.contents.quotes[0];
+        console.log(quoteObj);
         // Insert the quote text and author into the page
-        document.querySelector('.quote-text').innerHTML = quoteObj.h;
+        document.querySelector('.quote-text').innerHTML = `${quoteObj.quote} — ${quoteObj.author}`;
     } catch (error) {
         console.error('Error in fetching quoteOfTheDay:', error);
     }
