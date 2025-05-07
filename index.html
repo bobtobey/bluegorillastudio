@@ -9,8 +9,56 @@
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/bluegorillastudio.css">
-        <style>
-    </style>
+        <style> 
+            header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000; /* ensures the header stays on top */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow for visual separation */
+            }
+            
+            .header-branding-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0;
+                padding: 1rem;
+            }
+             
+            .page-homepage .maincontentwrapper {
+                margin: auto;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background: url('images/bg_construction.png') no-repeat center center;
+                background-size: cover;
+            }
+            .page-homepage article {
+                background-color: rgba(245, 245, 245, 0.50) !important; 
+                padding: calc(var(--base-padding-spacing) * 3) !important;
+            }
+            .text-hero {
+                text-align: center;
+            }         
+            .text-hero-body {
+                font-size: calc(var(--default-text-size) * 1.5);
+                margin: 0;
+                padding: 0;
+                width: 100%;   
+            }  
+            .redirect-message {
+                text-align: center;
+            }
+            .redirect-message a {
+                color: #007acc;
+                text-decoration: none;
+                font-weight: 600;
+            }
+            .redirect-message a:hover {
+                text-decoration: underline;
+            }
+        </style>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQ2KZXXK04"></script>
         <script>
@@ -25,9 +73,11 @@
     </head>
 
     <body class="page-homepage">
+        <!-- Outer Container START -->
         <div class="outer-container">
             <!-- Main Container START -->
             <div class="maincontainer">
+                <!-- Grid Wrapper START -->
                 <div class="gridwrapper">
                     <!-- HEADER Container -->
                     <header>
@@ -40,15 +90,6 @@
                         <nav>
                             <ul class="nav-menu">
                                 <li><a href="index.html" class="nav-link-active" title="Home">Home</a></li>
-                                <li class="nav-dropdown">
-                                    <a href="portfolio.html" title="Portfolio">Portfolio</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="portfolio.html" title="Case Studies">Case Studies</a></li>
-                                        <li><a href="clients.html" title="Client History">Client History</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="about.html" title="About">About</a></li>
-                                <li><a href="contact.html" title="Contact">Contact</a></li>
                             </ul>
                         </nav>
                     </header>
@@ -56,141 +97,18 @@
                     <div class="maincontentwrapper">
                         <!-- SECTION DETAILS -->
                         <section>
-                            <article class="article-grid-100 article-nobgbdr article-flex">
-                                <h2 class="text-hero">Bob Tobey — UX Architect &amp; Front-End Engineer</h2>
-                                <div class="text-hero-bloc">
-                                    <!-- <h2 class="text-hero">Welcome to Blue Gorilla Studio!</h2> -->
-                                    <p class="text-hero">
-                                        I build digital experiences that focus on the entire user journey from concept to completion and integrating design thinking into every stage of the process.
-                                    </p>
-                                </div>
-                                <div class="img-hero-profilepic">
-                                    <img src="images/profile-pic-2.png" alt="Bob Tobey - UX Engineer and Frontend Developer">
-                                </div>
-                            </article>
-                            <article class="article-grid-100 article-readable feature-projects article-style-tertiary-hollow">
-                                <h2>Featured Case Studies</h2>
-                                <div class="article-group-wrapper">
-                                    <div class="article-grid-wrapper">
-                                        <!-- Feature Project 1 -->
-                                        <div class="article-grid-bloc feature-one">
-                                            <div class="portfolio-image-wrapper">
-                                                <img src="images/portfolio/mm-feature-1.png" alt="Monark AI - FNOL Management">
-                                            </div>
-                                            <div class="article-text-wrapper">
-                                                <h3>AI-Powered Claims Interface</h3>
-                                                <p>
-                                                    This initial prototype shows how Monarch Insurance customers report claims with less hassle. The straightforward, visual guidance aims to make this essential first step less stressful and more understandable for everyone involved.
-                                                </p>
-                                            </div>
-                                            <div class="bgs-form-btn-bloc">
-                                                <a href="cs-ai-powered-fnol-management-application.html" class="btn-link btn-complementary btn-link-right btn-target-off" title="View Case Study" data-dialog-toggle="false">
-                                                    View Case Study
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-4 w-4" id="3lg2fv_0"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- Feature Project 2 -->
-                                        <div class="article-grid-bloc feature-two">
-                                            <div class="portfolio-image-wrapper">
-                                                <img src="images/portfolio/fnol-feature-1.png" alt="Reimagining First Notice of Loss (FNOL)">
-                                            </div>
-                                            <div class="article-text-wrapper">
-                                                <h3>Reimagining Claims Reporting</h3>
-                                                <p>
-                                                    This early design concept shows how a claims reporting experience could be simplified. The visual step-by-step interface is just a starting point, but it aims to bring more clarity and confidence to what's typically a confusing process.
-                                                </p>
-                                            </div>
-                                            <div class="bgs-form-btn-bloc">
-                                                <a href="cs-fnol-reimagined.html" class="btn-link btn-complementary btn-link-right btn-target-off" title="View Case Study" data-dialog-toggle="false">
-                                                    View Case Study
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-4 w-4" id="3lg2fv_0"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
+                            <article class="article-grid-100 article-nobgbdr article-flex" style="justify-content: center;">
+                                <h2 class="text-hero">Thank You for Visiting!</h2>
 
-                            <article class="article-grid-100 article-readable feature-articles article-style-empty">
-                                <h2>Articles</h2>
-                                <div class="article-text-wrapper">
-                                    <p>
-                                        View my articles on LinkedIn, where I share insights on
-                                        UX, design, development, leadership, and management topics.
-                                    </p>
+                                <div class="text-hero-body redirect-message">
+                                    <p class="text-hero-body">My portfolio site has moved to <a href="https://bobtobey.com">bobtobey.com</a>.</p>
+                                    <p class="text-hero-body">Click the link to visit my latest projects and professional work.</p>
                                 </div>
-                                <div class="article-group-wrapper">
-                                    <div class="article-grid-wrapper">
-                                        <div class="article-grid-bloc article-style-primary-hollow">
-                                            <div class="portfolio-image-wrapper">
-                                                <a href="https://www.linkedin.com/pulse/invisible-power-typography-bob-tobey-yomre" target="_blank" title="The Invisible Power of Typography" aria-hidden="true">
-                                                    <img src="images/article3-thb-pic.png" alt="The Invisible Power of Typography">
-                                                </a>
-                                            </div>
-                                            <div class="article-text-bloc article-category-bloc">
-                                                <span class="category-design">UX</span>
-                                            </div>
-                                            <div class="article-text-bloc">
-                                                <a href="https://www.linkedin.com/pulse/invisible-power-typography-bob-tobey-yomre">
-                                                    The Invisible Power of Typography
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="article-grid-bloc article-style-primary-hollow">
-                                            <div class="portfolio-image-wrapper">
-                                                <a href="https://www.linkedin.com/pulse/empowering-teams-success-managers-guide-motivating-employees-tobey-h9yne/" target="_blank" title="Empowering Teams for Success: A Managers Guide to Motivating Employees and Enhancing Performance" aria-hidden="true">
-                                                    <img src="images/article1-thb-pic.png" alt="Empowering Teams for Success: A Managers Guide to Motivating Employees and Enhancing Performance">
-                                                </a>
-                                            </div>
-                                            <div class="article-text-bloc article-category-bloc">
-                                                <span class="category-mngt">Management</span>
-                                            </div>
-                                            <div class="article-text-bloc">
-                                                <a href="https://www.linkedin.com/pulse/empowering-teams-success-managers-guide-motivating-employees-tobey-h9yne/" target="_blank" title="Empowering Teams for Success: A Managers Guide to Motivating Employees and Enhancing Performance">
-                                                    Empowering Teams for Motivation & Performance
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="article-grid-bloc article-style-primary-hollow">
-                                            <div class="portfolio-image-wrapper">
-                                                <a href="https://www.linkedin.com/pulse/managers-guide-building-high-performance-virtual-teams-bob-tobey-qfb7c/" target="_blank" title="Managers Guide To Building High-Performance Virtual Teams" aria-hidden="true">
-                                                    <img src="images/article2-thb-pic.png" alt="Managers Guide To Building High-Performance Virtual Teams">
-                                                </a>
-                                            </div>
-                                            <div class="article-text-bloc article-category-bloc">
-                                                <span class="category-mngt">Management</span>
-                                                <span class="category-mngt">Leadership</span>
-                                            </div>
-                                            <div class="article-text-bloc">
-                                                <a href="https://www.linkedin.com/pulse/managers-guide-building-high-performance-virtual-teams-bob-tobey-qfb7c/" target="_blank" title="Managers Guide To Building High-Performance Virtual Teams">
-                                                    A Guide To Building High-Performance Virtual Teams
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </section>
-
-                        <!-- SECTION QUOTE DETAILS -->
-                        <section>
-                            <article class="article-grid-100 article-nobgbdr quote-wrapper">
-
-                                <h2>Fuel for Your Mind</h2>
-                                <div class="quote-text">
-                                    <blockquote>
-                                        “The only way to do great work is to love what you do.” —
-                                        <footer class="quote-author">
-                                            Steve Jobs
-                                        </footer>
-                                    </blockquote>
-                                </div>
-
                             </article>
                         </section>
 
                     </div>
+                    <!-- CONTENT Area END -->
 
                     <!-- FOOTER -->
                     <footer>
@@ -202,31 +120,18 @@
                         </div>
                     </footer>
                 </div>
+                <!-- Grid Wrapper END -->
             </div>
             <!-- Main Container END -->
         </div>
+        <!-- Outer Container END -->
+
         <!-- Scripts -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
         <script src="scripts/main.js"></script>
 
         <script>
-        // Zen Quotes API URL
-        const api_url = 'https://quotes.rest/qod?category=inspire';
-        // quoteOfTheDay(api_url);
-
-        // STATIC TEMPLATE CODE
-        (function() {})();
-        document.addEventListener('DOMContentLoaded', function() {
-            // Timer Test Start
-            // console.time("Load Timer Test");
-            // console.log('DOM fully loaded and parsed');
-        });
-        window.addEventListener('load', function() {
-            // console.log('Page fully loaded', arguments[0]);
-            // Timer Test End
-            // console.timeEnd("Load Timer Test");
-        });
+            // Add your JavaScript code here
+            // Example: console.log('Hello, BlueGorillaStudio!');
         </script>
     </body>
 
